@@ -16,9 +16,8 @@ against a dark ground — never lifestyle or coloured smoke.
 - `xvr/01.jpg` … `xvr/04.jpg`
 - `mist-velocity-restriction/01.jpg` … `04.jpg`
 - `shakespeare/01.jpg` … `04.jpg`
-- `sovereign/01.jpg` … `03.jpg`
-- `meridian/01.jpg` … `03.jpg`
-- `hallmark/01.jpg` … `03.jpg`
+- `london/01.jpg` … `03.jpg`
+- `shakespeare-lounge/01.jpg` … `03.jpg`
 
 The first image of each product also serves as its collection-grid card (4:5).
 

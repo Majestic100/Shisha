@@ -31,10 +31,10 @@ export function HeritageBlock() {
             </h2>
             <div className="mt-7 space-y-5 text-pretty text-foreground-muted">
               <p>
-                Our instruments are machined by engineers who spend their other
-                hours on Aston Martin, Rolls-Royce and McLaren, and on
-                assemblies for the Royal Air Force. The tolerances they keep
-                there, they keep here.
+                Our instruments are machined in Coventry by engineers who spend
+                their other hours on Aston Martin, Rolls-Royce and Bentley, and
+                on one of the world&rsquo;s most revered British marques. The
+                tolerances they keep there, they keep here.
               </p>
               <p>
                 The cases are informed by a cabinetmaker who once built

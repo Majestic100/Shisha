@@ -5,6 +5,11 @@ import type { Product } from '@/types'
  * Replace this array with a CMS query (Sanity, Contentful, Shopify Storefront,
  * etc.) returning the same `Product[]` shape. Nothing else needs to change.
  *
+ * Models, prices and features reflect the Smoke Connoisseur catalogue. Copy is
+ * written in the house voice — sparse and engineer-precise — rather than lifted
+ * verbatim. Weights and dimensions are not published by the maker and are left
+ * out of the spec tables rather than invented.
+ *
  * Image paths point at /public/images/products/<slug>/. Drop real photography
  * in those folders and the gallery picks it up automatically.
  */
@@ -14,37 +19,41 @@ export const products: Product[] = [
     name: 'XVR',
     tagline: 'The reference instrument.',
     summary:
-      'The first piece judged worthy of the hallmark. Machined from a single billet, sealed, and silent.',
+      'The most considered piece in the collection. British V2A stainless steel, sealed by Magni Connect, silent by design.',
     story:
-      'XVR is named for its fifteenth revision. Fourteen prototypes were drawn, cut and rejected before the engineers signed the fifteenth. Nothing was added for show. Everything that remained had earned its place. It is the instrument against which every later piece is measured.',
-    priceNote: 'Commissioned to order · from £4,800',
+      'XVR is the instrument against which every other is measured. It is machined in Coventry by engineers whose other work carries the names of Aston Martin and Rolls-Royce, then finished by hand. Nothing is added for show. Click-lock assembly, a sealed airpath and a calibrated diffuser are not features here. They are the specification.',
+    priceNote: 'From £400',
     specifications: [
-      { label: 'Core material', value: 'Billet 316L stainless steel' },
-      { label: 'Fittings', value: 'Naval brass, hand-finished' },
-      { label: 'Weight', value: '4.2 kg' },
-      { label: 'Height', value: '580 mm' },
-      { label: 'Finish', value: 'Vapour-blasted, hand-polished' },
-      { label: 'Manufacture', value: 'Made in England' },
+      { label: 'Core material', value: 'V2A British stainless steel' },
+      { label: 'Assembly', value: 'Click-lock, Magni Connect seals' },
+      { label: 'Airflow', value: 'Smooth Purge 360°, removable diffuser' },
+      { label: 'Hose', value: 'Velvet-touch' },
+      { label: 'Supplied with', value: 'Stone bowl, heat management device' },
+      { label: 'Manufacture', value: 'Machined in Coventry, England' },
     ],
     details: [
       {
-        title: 'Single-billet core',
-        body: 'The column is machined from one block of 316L. No welds, no seams, no joints to loosen across a lifetime of use.',
+        title: 'Click-lock assembly',
+        body: 'Each interface locks positively by hand, without tools and without thread tape. The connection is secure and repeatable across a lifetime of use.',
       },
       {
-        title: 'Sealed airpath',
-        body: 'Every interface is machined to a tolerance of two hundredths of a millimetre. The draw is airtight without a single rubber grommet.',
+        title: 'Magni Connect seals',
+        body: 'The sealing system holds the airpath airtight without perishable rubber grommets, so the draw stays true as the years pass.',
+      },
+      {
+        title: 'Smooth Purge 360°',
+        body: 'Spent smoke clears evenly through a full-circle purge rather than a single valve, modelled on the airflow work the engineers do elsewhere.',
       },
       {
         title: 'Calibrated diffuser',
-        body: 'The diffuser geometry was modelled in the same software used for intake ducting. It quiets the draw and holds the mist.',
+        body: 'A removable diffuser and velocity-restriction adapters let the draw be tuned, then quieted, to preference.',
       },
     ],
     gallery: [
       { src: '/images/products/xvr/01.jpg', alt: 'XVR hookah, full instrument against an off-black ground' },
-      { src: '/images/products/xvr/02.jpg', alt: 'Macro detail of the XVR machined brass collar' },
-      { src: '/images/products/xvr/03.jpg', alt: 'XVR sealed airpath thread, close detail' },
-      { src: '/images/products/xvr/04.jpg', alt: 'XVR base, vapour-blasted stainless finish' },
+      { src: '/images/products/xvr/02.jpg', alt: 'Macro detail of the XVR machined collar' },
+      { src: '/images/products/xvr/03.jpg', alt: 'XVR click-lock interface, close detail' },
+      { src: '/images/products/xvr/04.jpg', alt: 'XVR base, British V2A stainless finish' },
     ],
     featured: true,
     order: 1,
@@ -52,39 +61,39 @@ export const products: Product[] = [
   {
     slug: 'mist-velocity-restriction',
     name: 'Mist Velocity Restriction',
-    tagline: 'Stillness, engineered.',
+    tagline: 'The first, engineered in Britain.',
     summary:
-      'Named for the principle it governs. Airflow is restrained so the draw falls silent and the mist hangs.',
+      'The world’s first British-designed and British-made shisha. Named for the airflow principle it governs.',
     story:
-      'The Mist Velocity Restriction takes its name from the airflow law it was built to obey. By restricting velocity through a calibrated venturi, the draw is rendered all but silent and the mist settles rather than scatters. The name is not poetry. It is a specification.',
-    priceNote: 'Commissioned to order · from £5,400',
+      'The Mist Velocity Restriction was the beginning: the first shisha designed and made in Britain, drawn in Coventry with the discipline of motorsport engineering. It takes its name from the law it obeys. By restricting flow velocity through a calibrated restriction, the draw is rendered all but silent and the mist settles rather than scatters. The name is not poetry. It is a specification.',
+    priceNote: 'From £350',
     specifications: [
-      { label: 'Core material', value: 'Billet titanium, grade 5' },
-      { label: 'Fittings', value: 'Naval brass, hand-finished' },
-      { label: 'Weight', value: '3.6 kg' },
-      { label: 'Height', value: '610 mm' },
-      { label: 'Finish', value: 'Bead-blasted titanium, brushed brass' },
-      { label: 'Manufacture', value: 'Made in England' },
+      { label: 'Core material', value: 'Medical-grade stainless steel' },
+      { label: 'Assembly', value: 'Click-lock, Magni Connect seals' },
+      { label: 'Airflow', value: 'Velocity restriction, removable diffuser' },
+      { label: 'Hose', value: 'Velvet-touch' },
+      { label: 'Origin', value: 'British-designed, British-made' },
+      { label: 'Manufacture', value: 'Made in Coventry, England' },
     ],
     details: [
       {
-        title: 'Calibrated venturi',
+        title: 'Calibrated restriction',
         body: 'A machined restriction governs flow velocity precisely, drawing the same characteristic at the first coal as at the last.',
       },
       {
-        title: 'Grade 5 titanium column',
-        body: 'Aerospace titanium carries the structure at a lower mass, without conceding rigidity at the joints.',
+        title: 'Settled mist',
+        body: 'By holding velocity low, the mist is encouraged to settle and hang rather than disperse, for a fuller, quieter draw.',
       },
       {
-        title: 'Acoustic damping',
-        body: 'Internal surfaces are profiled to absorb turbulence. The instrument is quiet by design, not by accident.',
+        title: 'Supercar discipline',
+        body: 'Designed by engineers who build for Britain’s finest marques, to the tolerances that work demands.',
       },
     ],
     gallery: [
       { src: '/images/products/mist-velocity-restriction/01.jpg', alt: 'Mist Velocity Restriction hookah, full instrument' },
-      { src: '/images/products/mist-velocity-restriction/02.jpg', alt: 'Titanium column detail, bead-blasted finish' },
-      { src: '/images/products/mist-velocity-restriction/03.jpg', alt: 'Calibrated venturi restriction, macro view' },
-      { src: '/images/products/mist-velocity-restriction/04.jpg', alt: 'Brushed brass fitting against off-black' },
+      { src: '/images/products/mist-velocity-restriction/02.jpg', alt: 'Stainless column detail' },
+      { src: '/images/products/mist-velocity-restriction/03.jpg', alt: 'Calibrated velocity restriction, macro view' },
+      { src: '/images/products/mist-velocity-restriction/04.jpg', alt: 'Fitting detail against off-black' },
     ],
     featured: true,
     order: 2,
@@ -92,148 +101,116 @@ export const products: Product[] = [
   {
     slug: 'shakespeare',
     name: 'Shakespeare',
-    tagline: 'Written in brass.',
+    tagline: 'Made within sight of his county.',
     summary:
-      'A tribute to the maker’s county. Hand-engraved by a single craftsman, signed and numbered.',
+      'Hand-finished in Warwickshire, the county that bore the playwright. British craft, named for British letters.',
     story:
-      'Shakespeare is made within sight of the county that bore him. Each column is hand-engraved by one craftsman, in a hand that takes years to acquire and a morning to read. The work is signed and numbered. No two are identical, and none is meant to be.',
-    priceNote: 'Commissioned to order · from £7,200',
+      'Shakespeare is made within sight of the county that bore him. It is hand-finished in Warwickshire by local artisans, from parts machined in the Midlands, and carries the same sealed, click-lock engineering as the rest of the house. The name is a quiet tribute to where the work is done, and to whom the county is owed.',
+    priceNote: 'From £250',
     specifications: [
-      { label: 'Core material', value: 'Billet 316L stainless steel' },
-      { label: 'Fittings', value: 'Hand-engraved naval brass' },
-      { label: 'Weight', value: '4.5 kg' },
-      { label: 'Height', value: '585 mm' },
-      { label: 'Finish', value: 'Hand-engraved, mirror-polished' },
+      { label: 'Core material', value: 'Medical-grade stainless steel' },
+      { label: 'Assembly', value: 'Click-lock, Magni Connect seals' },
+      { label: 'Airflow', value: 'Smooth Purge 360°, removable diffuser' },
+      { label: 'Hose', value: 'Velvet-touch' },
+      { label: 'Finishing', value: 'Hand-finished in Warwickshire' },
       { label: 'Manufacture', value: 'Made in England' },
     ],
     details: [
       {
-        title: 'Hand engraving',
-        body: 'The motif is cut by hand, not rolled or etched. Each line carries the pressure of the tool and the judgement of the engraver.',
+        title: 'Hand-finished',
+        body: 'Finished by local artisans in Coventry and Warwickshire, where the marks of the hand are a feature, not a flaw.',
       },
       {
-        title: 'Signed and numbered',
-        body: 'Every Shakespeare records its maker and its place in the series, struck into the base beneath the hallmark.',
+        title: 'Sealed airpath',
+        body: 'Magni Connect seals and click-lock assembly hold the draw airtight without perishable parts.',
       },
       {
-        title: 'Mirror finish',
-        body: 'The polish is built in stages across several days, each grade removing the marks of the last.',
+        title: 'Named for the county',
+        body: 'A tribute to Warwickshire, the county that produced both the playwright and the people who build this.',
       },
     ],
     gallery: [
-      { src: '/images/products/shakespeare/01.jpg', alt: 'Shakespeare hookah, hand-engraved column' },
-      { src: '/images/products/shakespeare/02.jpg', alt: 'Detail of hand engraving on naval brass' },
-      { src: '/images/products/shakespeare/03.jpg', alt: 'Mirror-polished base with hallmark' },
-      { src: '/images/products/shakespeare/04.jpg', alt: 'Engraver’s signature struck into the base' },
+      { src: '/images/products/shakespeare/01.jpg', alt: 'Shakespeare hookah, full instrument' },
+      { src: '/images/products/shakespeare/02.jpg', alt: 'Hand-finished fitting detail' },
+      { src: '/images/products/shakespeare/03.jpg', alt: 'Polished base detail' },
+      { src: '/images/products/shakespeare/04.jpg', alt: 'Maker’s detail at the base' },
     ],
     featured: true,
     order: 3,
   },
   {
-    slug: 'sovereign',
-    name: 'Sovereign',
-    tagline: 'Weight without compromise.',
-    summary: 'The heaviest piece in the collection. Built to stand, not to travel.',
+    slug: 'london',
+    name: 'London',
+    tagline: 'A capital, cast as an instrument.',
+    summary:
+      'The British telephone box, reimagined as a shisha. Purge releases through the silhouette itself.',
     story:
-      'The Sovereign is unapologetic about its mass. It was drawn for a single place in a single room, and it holds that place absolutely. Where others are made to be carried, the Sovereign is made to be returned to.',
-    priceNote: 'Commissioned to order · from £6,100',
+      'London takes one of Britain’s most recognised silhouettes — the red telephone box — and renders it as an instrument. The conceit is not decoration: the purge releases smoke through the form itself. Beneath the shape sits the same medical-grade steel, click-lock assembly and sealed airpath as every piece the house makes. A landmark you can keep.',
+    priceNote: 'From £350',
     specifications: [
-      { label: 'Core material', value: 'Billet 316L stainless steel' },
-      { label: 'Fittings', value: 'Solid naval brass' },
-      { label: 'Weight', value: '5.8 kg' },
-      { label: 'Height', value: '640 mm' },
-      { label: 'Finish', value: 'Satin-brushed, hand-polished' },
+      { label: 'Core material', value: 'Medical-grade stainless steel' },
+      { label: 'Assembly', value: 'Click-lock, Magni Connect seals' },
+      { label: 'Airflow', value: 'Smooth Purge 360°, three airflow adapters' },
+      { label: 'Hose', value: 'Velvet-touch' },
+      { label: 'Form', value: 'British telephone-box silhouette' },
       { label: 'Manufacture', value: 'Made in England' },
     ],
     details: [
       {
-        title: 'Ballasted base',
-        body: 'A machined ballast lowers the centre of mass so the instrument settles and stays settled.',
+        title: 'Purge through the form',
+        body: 'The telephone-box silhouette is functional: spent smoke releases through the structure itself.',
       },
       {
-        title: 'Solid brass throughout',
-        body: 'Fittings are turned from solid stock, not cast, for a density that reads in the hand.',
+        title: 'Three airflow adapters',
+        body: 'Supplied with three adapters and a removable diffuser, the draw is tuned to preference.',
       },
       {
-        title: 'Satin finish',
-        body: 'A directional brush catches low light without glare, chosen for the long evening.',
+        title: 'Engineered beneath the icon',
+        body: 'Designed by former engineers from Britain’s finest marques, on the same sealed, click-lock platform as the collection.',
       },
     ],
     gallery: [
-      { src: '/images/products/sovereign/01.jpg', alt: 'Sovereign hookah, full instrument' },
-      { src: '/images/products/sovereign/02.jpg', alt: 'Ballasted base, satin-brushed steel' },
-      { src: '/images/products/sovereign/03.jpg', alt: 'Solid brass fitting detail' },
+      { src: '/images/products/london/01.jpg', alt: 'London hookah, telephone-box form, full instrument' },
+      { src: '/images/products/london/02.jpg', alt: 'London purge detail through the form' },
+      { src: '/images/products/london/03.jpg', alt: 'London base and fittings' },
     ],
     featured: false,
     order: 4,
   },
   {
-    slug: 'meridian',
-    name: 'Meridian',
-    tagline: 'Calibrated for the long evening.',
-    summary: 'A taller draw and a slower burn. Drawn for conversation that does not end early.',
+    slug: 'shakespeare-lounge',
+    name: 'Shakespeare Lounge',
+    tagline: 'Proportioned for the long evening.',
+    summary:
+      'A lounge-height take on Shakespeare. The same British engineering, drawn for the table and the room.',
     story:
-      'The Meridian was proportioned for time. A taller column lengthens the draw and slows the burn, so the instrument keeps pace with the evening rather than outrunning it. It is named for the highest point of the day, and made for its quietest.',
-    priceNote: 'Commissioned to order · from £5,200',
+      'The Shakespeare Lounge keeps the engineering of its namesake and re-proportions it for the lounge: a height drawn for the low table and the unhurried evening. It carries the same sealed airpath, click-lock assembly and hand finishing, in a stance made to stay put.',
+    priceNote: 'From £250',
     specifications: [
-      { label: 'Core material', value: 'Billet 316L stainless steel' },
-      { label: 'Fittings', value: 'Naval brass, hand-finished' },
-      { label: 'Weight', value: '4.0 kg' },
-      { label: 'Height', value: '720 mm' },
-      { label: 'Finish', value: 'Vapour-blasted, hand-polished' },
+      { label: 'Core material', value: 'Medical-grade stainless steel' },
+      { label: 'Assembly', value: 'Click-lock, Magni Connect seals' },
+      { label: 'Airflow', value: 'Smooth Purge 360°, removable diffuser' },
+      { label: 'Hose', value: 'Velvet-touch' },
+      { label: 'Format', value: 'Lounge height' },
       { label: 'Manufacture', value: 'Made in England' },
     ],
     details: [
       {
-        title: 'Extended column',
-        body: 'Additional column length cools the draw further and lengthens the interval between attentions.',
+        title: 'Lounge proportion',
+        body: 'Re-drawn for the low table and the long sitting, without conceding the engineering.',
       },
       {
-        title: 'Slow-burn geometry',
-        body: 'The bowl interface is profiled to moderate heat, drawing more from each coal.',
+        title: 'Hand-finished',
+        body: 'Finished by artisans in Coventry and Warwickshire, as the standing Shakespeare is.',
       },
     ],
     gallery: [
-      { src: '/images/products/meridian/01.jpg', alt: 'Meridian hookah, extended column' },
-      { src: '/images/products/meridian/02.jpg', alt: 'Meridian draw interface, macro detail' },
-      { src: '/images/products/meridian/03.jpg', alt: 'Meridian base against off-black ground' },
+      { src: '/images/products/shakespeare-lounge/01.jpg', alt: 'Shakespeare Lounge hookah, full instrument' },
+      { src: '/images/products/shakespeare-lounge/02.jpg', alt: 'Shakespeare Lounge fitting detail' },
+      { src: '/images/products/shakespeare-lounge/03.jpg', alt: 'Shakespeare Lounge base detail' },
     ],
     featured: false,
     order: 5,
-  },
-  {
-    slug: 'hallmark',
-    name: 'Hallmark',
-    tagline: 'The first of the line.',
-    summary: 'The founding instrument, kept in production unchanged. The standard everything else answers to.',
-    story:
-      'The Hallmark is the piece the house began with, and it has not changed. It remains in production exactly as drawn, because a standard that moves is no standard at all. To own a Hallmark is to own the origin of the line.',
-    priceNote: 'Commissioned to order · from £4,400',
-    specifications: [
-      { label: 'Core material', value: 'Billet 316L stainless steel' },
-      { label: 'Fittings', value: 'Naval brass, hand-finished' },
-      { label: 'Weight', value: '4.1 kg' },
-      { label: 'Height', value: '560 mm' },
-      { label: 'Finish', value: 'Hand-polished' },
-      { label: 'Manufacture', value: 'Made in England' },
-    ],
-    details: [
-      {
-        title: 'Unchanged drawing',
-        body: 'Produced to the original specification, revision-locked since the first piece left the works.',
-      },
-      {
-        title: 'Struck hallmark',
-        body: 'Each instrument carries the house mark, struck by hand into the base.',
-      },
-    ],
-    gallery: [
-      { src: '/images/products/hallmark/01.jpg', alt: 'Hallmark hookah, the founding instrument' },
-      { src: '/images/products/hallmark/02.jpg', alt: 'House mark struck into the base' },
-      { src: '/images/products/hallmark/03.jpg', alt: 'Hand-polished brass collar detail' },
-    ],
-    featured: false,
-    order: 6,
   },
 ]
 

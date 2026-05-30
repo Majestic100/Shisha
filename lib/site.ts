@@ -10,14 +10,14 @@ export const site = {
   // intentionally avoided — this is a public constant, not a secret.
   url: 'https://www.smokeconnoisseur.co.uk',
   description:
-    'The first hookah engineered in England. Machined by the engineers behind Aston Martin, Rolls-Royce and McLaren, and warranted for a lifetime.',
+    'The first shisha engineered in Britain. Machined in Coventry by the engineers behind Aston Martin, Rolls-Royce and Bentley, and warranted for a lifetime.',
   locale: 'en_GB',
   contact: {
     email: 'enquiries@smokeconnoisseur.co.uk',
     phone: '+44 (0)1926 000000',
     address: {
       line1: 'The Engineering Works',
-      line2: 'Warwickshire',
+      line2: 'Coventry, Warwickshire',
       country: 'United Kingdom',
     },
   },

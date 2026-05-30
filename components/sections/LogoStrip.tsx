@@ -1,7 +1,7 @@
 import { Container } from '@/components/ui/Container'
 import { Reveal } from '@/components/ui/Reveal'
 
-const makers = ['Aston Martin', 'Rolls-Royce', 'McLaren', 'Royal Air Force']
+const makers = ['Aston Martin', 'Rolls-Royce', 'Bentley', 'British Motorsport']
 
 /**
  * Provenance strip. Wordmarks are rendered as type rather than logos to avoid

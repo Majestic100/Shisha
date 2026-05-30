@@ -63,7 +63,7 @@ export const journal: JournalEntry[] = [
     },
     body: [
       'The English Midlands have made precision for a very long time. The skills did not arrive with the supercar; the supercar arrived because the skills were already here. We sit within that tradition, not beside it.',
-      'The engineers who machine our instruments machine other things too. Components for Aston Martin. Parts for Rolls-Royce and McLaren. Assemblies for the Royal Air Force. The tolerances they work to elsewhere are the tolerances they bring here.',
+      'The engineers who machine our instruments machine other things too. Components for Aston Martin. Parts for Rolls-Royce and Bentley. Assemblies for one of the world’s most revered British marques. The tolerances they work to elsewhere are the tolerances they bring here.',
       '> The hand that machines to aerospace tolerance does not forget how on a Friday afternoon.',
       'Among them is a cabinetmaker who once made furniture for Queen Elizabeth II. His joinery informs how our cases are made, and how the instruments are presented. Craft, it turns out, transfers between materials more readily than between people.',
       'We could make this elsewhere, more cheaply. We do not, because the place is part of the object. Warwickshire is in the work, and it stays there.',

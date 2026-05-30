@@ -10,7 +10,7 @@ import { buildMetadata } from '@/lib/seo'
 export const metadata: Metadata = buildMetadata({
   title: 'Heritage',
   description:
-    'The engineers behind Smoke Connoisseur build for Aston Martin, Rolls-Royce, McLaren and the Royal Air Force. The making, the workshop, the county.',
+    'The engineers behind Smoke Connoisseur build for Aston Martin, Rolls-Royce and Bentley. The making, the workshop, the county.',
   path: '/heritage',
 })
 
@@ -53,11 +53,12 @@ export default function HeritagePage() {
             <Reveal delay={0.1} className="lg:col-span-7 lg:col-start-6">
               <div className="space-y-6 text-pretty text-lg leading-relaxed text-foreground-muted">
                 <p>
-                  Our instruments are machined by engineers whose other work
-                  carries names you already know. Components for Aston Martin.
-                  Parts for Rolls-Royce and McLaren. Assemblies bound for the
-                  Royal Air Force. The discipline these demand is not something
-                  one switches off between projects.
+                  Our instruments are machined in Coventry by engineers whose
+                  other work carries names you already know. Components for Aston
+                  Martin. Parts for Rolls-Royce and Bentley. Assemblies for one
+                  of the world&rsquo;s most revered British marques. The
+                  discipline these demand is not something one switches off
+                  between projects.
                 </p>
                 <p>
                   A tolerance of two hundredths of a millimetre is not a
