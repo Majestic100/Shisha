@@ -8,10 +8,10 @@ export default function NotFound() {
       <Container>
         <div className="mx-auto max-w-2xl text-center">
           <Eyebrow rule={false}>Error 404</Eyebrow>
-          <h1 className="mt-8 text-balance text-h1 font-light text-ivory">
+          <h1 className="mt-8 text-balance text-h1 font-light text-foreground">
             This page was never machined.
           </h1>
-          <p className="mx-auto mt-6 max-w-md text-pretty text-ivory-muted">
+          <p className="mx-auto mt-6 max-w-md text-pretty text-foreground-muted">
             The page you sought does not exist. Everything that does is in the
             collection.
           </p>

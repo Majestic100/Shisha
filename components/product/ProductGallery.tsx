@@ -62,7 +62,7 @@ export function ProductGallery({ images, name }: { images: MediaAsset[]; name: s
               type="button"
               onClick={() => go(index - 1)}
               aria-label="Previous image"
-              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-hairline bg-ink/50 text-ivory backdrop-blur-sm transition-colors duration-300 hover:border-brass hover:text-brass"
+              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-hairline bg-surface/50 text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-brass hover:text-brass"
             >
               <Arrow direction="left" />
             </button>
@@ -70,11 +70,11 @@ export function ProductGallery({ images, name }: { images: MediaAsset[]; name: s
               type="button"
               onClick={() => go(index + 1)}
               aria-label="Next image"
-              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-hairline bg-ink/50 text-ivory backdrop-blur-sm transition-colors duration-300 hover:border-brass hover:text-brass"
+              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center border border-hairline bg-surface/50 text-foreground backdrop-blur-sm transition-colors duration-300 hover:border-brass hover:text-brass"
             >
               <Arrow direction="right" />
             </button>
-            <div className="absolute bottom-4 right-4 bg-ink/60 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-ivory backdrop-blur-sm">
+            <div className="absolute bottom-4 right-4 bg-surface/60 px-3 py-1.5 text-xs uppercase tracking-[0.18em] text-foreground backdrop-blur-sm">
               {String(index + 1).padStart(2, '0')} / {String(count).padStart(2, '0')}
             </div>
           </>

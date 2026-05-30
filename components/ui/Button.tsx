@@ -14,8 +14,8 @@ const sizes: Record<Size, string> = {
 }
 
 const variants: Record<Variant, string> = {
-  solid: 'bg-brass text-ink hover:bg-brass-light',
-  outline: 'border border-brass/50 text-ivory hover:border-brass hover:bg-brass/5',
+  solid: 'bg-brass text-surface hover:bg-brass-light',
+  outline: 'border border-brass/50 text-foreground hover:border-brass hover:bg-brass/5',
   link: 'px-0 py-0 text-brass hover:text-brass-light tracking-[0.2em]',
 }
 

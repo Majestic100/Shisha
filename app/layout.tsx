@@ -47,11 +47,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-GB" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="min-h-screen bg-ink text-ivory">
+      <body className="min-h-screen bg-surface text-foreground">
         <JsonLd data={organizationSchema()} />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-brass focus:px-4 focus:py-2 focus:text-ink"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-brass focus:px-4 focus:py-2 focus:text-surface"
         >
           Skip to content
         </a>

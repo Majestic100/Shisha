@@ -27,7 +27,7 @@ export function NewsletterForm() {
 
   if (status === 'done') {
     return (
-      <p className="text-pretty text-sm text-ivory-muted" role="status">
+      <p className="text-pretty text-sm text-foreground-muted" role="status">
         Thank you. You have joined the Connoisseur Circle.
       </p>
     )
@@ -52,7 +52,7 @@ export function NewsletterForm() {
           }}
           aria-invalid={status === 'error'}
           aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
-          className="w-full bg-transparent font-sans text-sm text-ivory placeholder:text-ivory-faint focus:outline-none"
+          className="w-full bg-transparent font-sans text-sm text-foreground placeholder:text-foreground-faint focus:outline-none"
         />
         <button
           type="submit"

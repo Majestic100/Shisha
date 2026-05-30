@@ -12,10 +12,10 @@ export function SpecTable({ specifications }: { specifications: Specification[] 
           key={spec.label}
           className="flex items-baseline justify-between gap-6 border-b border-hairline py-4"
         >
-          <dt className="text-xs uppercase tracking-[0.16em] text-ivory-faint">
+          <dt className="text-xs uppercase tracking-[0.16em] text-foreground-faint">
             {spec.label}
           </dt>
-          <dd className="text-right font-sans text-sm text-ivory">{spec.value}</dd>
+          <dd className="text-right font-sans text-sm text-foreground">{spec.value}</dd>
         </div>
       ))}
     </dl>

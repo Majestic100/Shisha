@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/Button'
  */
 export function HeritageBlock() {
   return (
-    <section className="border-t border-hairline bg-ink-raised py-section">
+    <section className="border-t border-hairline bg-surface-raised py-section">
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
@@ -26,10 +26,10 @@ export function HeritageBlock() {
 
           <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
             <Eyebrow>The Hands Behind It</Eyebrow>
-            <h2 className="mt-7 text-balance text-h2 font-light text-ivory">
+            <h2 className="mt-7 text-balance text-h2 font-light text-foreground">
               Built by engineers. Finished by a craftsman who furnished a Queen.
             </h2>
-            <div className="mt-7 space-y-5 text-pretty text-ivory-muted">
+            <div className="mt-7 space-y-5 text-pretty text-foreground-muted">
               <p>
                 Our instruments are machined by engineers who spend their other
                 hours on Aston Martin, Rolls-Royce and McLaren, and on

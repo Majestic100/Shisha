@@ -65,15 +65,18 @@ public/images/            Photography lives here (see "Adding photography")
 
 ## Design system
 
+Tokens are role-based, so the palette can be re-themed in one place
+(`tailwind.config.ts`) without touching components.
+
 | Token | Value | Use |
 | --- | --- | --- |
-| `ink` | `#0A0A0A` | Primary background |
-| `ink-raised` | `#121212` | Cards, alternating sections |
-| `ivory` | `#F5F1EA` | Primary text |
-| `ivory-muted` / `ivory-faint` | ivory @ 64% / 40% | Secondary / tertiary text |
-| `brass` / `brass-light` | `#B08D57` / `#C9A876` | Accent, hover |
-| `graphite` | `#3A3A3A` | Dim surfaces |
-| `hairline` | ivory @ 12% | 1px rules |
+| `surface` | `#FBF9F5` | Primary background (warm white) |
+| `surface-raised` | `#F1ECE3` | Cards, alternating sections |
+| `foreground` | `#15120D` | Primary text (near-black) |
+| `foreground-muted` / `foreground-faint` | foreground @ 72% / 58% | Secondary / tertiary text |
+| `brass` / `brass-light` | `#8A6A2F` / `#A9854A` | Accent, hover (AA-contrast on white) |
+| `graphite` | `#6B6760` | Dim surfaces |
+| `hairline` | foreground @ 14% | 1px rules |
 
 - **Type:** serif (Cormorant Garamond) for headings; sans (Inter) for body. Fluid sizes `text-display / h1 / h2 / h3`, plus `eyebrow` (uppercase, 0.28em tracking, brass).
 - **Spacing:** 4px base; section rhythm via `py-section` (`clamp(5rem, 10vw, 11rem)`); content capped at `max-w-content` (1440px) with wide gutters; full-bleed heroes.

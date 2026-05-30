@@ -38,12 +38,12 @@ export default function ProductPage({ params }: Params) {
 
       <Container className="pt-32 md:pt-40">
         <Reveal>
-          <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-[0.16em] text-ivory-faint">
-            <Link href="/collection" className="link-underline hover:text-ivory">
+          <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-[0.16em] text-foreground-faint">
+            <Link href="/collection" className="link-underline hover:text-foreground">
               The Collection
             </Link>
-            <span className="mx-3 text-ivory-faint">/</span>
-            <span className="text-ivory/80">{product.name}</span>
+            <span className="mx-3 text-foreground-faint">/</span>
+            <span className="text-foreground/80">{product.name}</span>
           </nav>
         </Reveal>
       </Container>
@@ -60,16 +60,16 @@ export default function ProductPage({ params }: Params) {
             <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
               <Reveal>
                 <Eyebrow>The {product.name}</Eyebrow>
-                <h1 className="mt-6 text-balance text-h1 font-light text-ivory">
+                <h1 className="mt-6 text-balance text-h1 font-light text-foreground">
                   {product.name}
                 </h1>
                 <p className="mt-4 font-serif text-2xl font-light italic text-brass">
                   {product.tagline}
                 </p>
-                <p className="mt-7 text-pretty text-ivory-muted">{product.summary}</p>
+                <p className="mt-7 text-pretty text-foreground-muted">{product.summary}</p>
 
                 <div className="mt-9 flex flex-wrap items-center gap-6 border-t border-hairline pt-7">
-                  <span className="text-sm uppercase tracking-[0.16em] text-ivory">
+                  <span className="text-sm uppercase tracking-[0.16em] text-foreground">
                     {product.priceNote}
                   </span>
                 </div>
@@ -88,17 +88,17 @@ export default function ProductPage({ params }: Params) {
       </section>
 
       {/* Story */}
-      <section className="border-t border-hairline bg-ink-raised py-section">
+      <section className="border-t border-hairline bg-surface-raised py-section">
         <Container>
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <Eyebrow>The Name</Eyebrow>
-              <h2 className="mt-6 text-balance text-h2 font-light text-ivory">
+              <h2 className="mt-6 text-balance text-h2 font-light text-foreground">
                 The story behind {product.name}.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-6 lg:col-start-7">
-              <p className="text-pretty text-lg leading-relaxed text-ivory-muted">
+              <p className="text-pretty text-lg leading-relaxed text-foreground-muted">
                 {product.story}
               </p>
             </Reveal>
@@ -112,7 +112,7 @@ export default function ProductPage({ params }: Params) {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-5">
               <Eyebrow>Specifications</Eyebrow>
-              <h2 className="mt-6 text-balance text-h3 font-light text-ivory">
+              <h2 className="mt-6 text-balance text-h3 font-light text-foreground">
                 Measured, not described.
               </h2>
               <div className="mt-8">

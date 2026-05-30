@@ -32,31 +32,31 @@ export function ProductCard({
           />
           <div
             aria-hidden
-            className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-focus-within:opacity-100"
+            className="absolute inset-0 bg-gradient-to-t from-surface/70 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100 group-focus-within:opacity-100"
           />
         </div>
 
         <div className="relative mt-6">
           <div className="flex items-baseline justify-between gap-4">
-            <h3 className="font-serif text-2xl font-light text-ivory md:text-3xl">
+            <h3 className="font-serif text-2xl font-light text-foreground md:text-3xl">
               {product.name}
             </h3>
-            <span className="shrink-0 text-[0.7rem] uppercase tracking-[0.2em] text-ivory-faint">
+            <span className="shrink-0 text-[0.7rem] uppercase tracking-[0.2em] text-foreground-faint">
               {product.specifications.find((s) => s.label === 'Manufacture')?.value}
             </span>
           </div>
-          <p className="mt-2 text-pretty text-sm text-ivory-muted">
+          <p className="mt-2 text-pretty text-sm text-foreground-muted">
             {product.tagline}
           </p>
 
           {/* Revealed on hover / focus */}
           <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-700 ease-luxe group-hover:grid-rows-[1fr] group-hover:opacity-100 group-focus-within:grid-rows-[1fr] group-focus-within:opacity-100">
             <div className="overflow-hidden">
-              <p className="max-w-sm pt-4 text-pretty text-sm text-ivory-muted">
+              <p className="max-w-sm pt-4 text-pretty text-sm text-foreground-muted">
                 {product.summary}
               </p>
               <div className="mt-5 flex items-center justify-between border-t border-hairline pt-4">
-                <span className="text-xs uppercase tracking-[0.16em] text-ivory-faint">
+                <span className="text-xs uppercase tracking-[0.16em] text-foreground-faint">
                   {product.priceNote}
                 </span>
                 <span className="text-[0.72rem] uppercase tracking-[0.2em] text-brass">

@@ -30,7 +30,7 @@ export function Accordion({ items }: { items: EngineeredDetail[] }) {
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors duration-300"
               >
-                <span className="font-serif text-2xl font-light text-ivory">
+                <span className="font-serif text-2xl font-light text-foreground">
                   {item.title}
                 </span>
                 <span
@@ -58,7 +58,7 @@ export function Accordion({ items }: { items: EngineeredDetail[] }) {
                   transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
                 >
-                  <p className="max-w-prose pb-7 pr-10 text-pretty text-ivory-muted">
+                  <p className="max-w-prose pb-7 pr-10 text-pretty text-foreground-muted">
                     {item.body}
                   </p>
                 </motion.div>

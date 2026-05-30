@@ -15,7 +15,7 @@ const tiles = Array.from({ length: 6 }, (_, i) => ({
 
 export function InstagramFeed() {
   return (
-    <section className="border-t border-hairline bg-ink py-section">
+    <section className="border-t border-hairline bg-surface py-section">
       <Container>
         <div className="flex flex-col gap-6 text-center">
           <Reveal className="flex flex-col items-center gap-5">
@@ -24,7 +24,7 @@ export function InstagramFeed() {
               href={site.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="link-underline font-serif text-3xl font-light text-ivory md:text-4xl"
+              className="link-underline font-serif text-3xl font-light text-foreground md:text-4xl"
             >
               {site.social.instagramHandle}
             </a>

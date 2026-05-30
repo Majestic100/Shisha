@@ -42,14 +42,14 @@ export function Header() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-700 ease-luxe',
         scrolled || menuOpen
-          ? 'border-b border-hairline bg-ink/90 backdrop-blur-md'
+          ? 'border-b border-hairline bg-surface/90 backdrop-blur-md'
           : 'border-b border-transparent bg-transparent'
       )}
     >
       <div className="container-page flex h-20 items-center justify-between md:h-24">
         <Link
           href="/"
-          className="font-serif text-lg font-light tracking-[0.22em] text-ivory md:text-xl"
+          className="font-serif text-lg font-light tracking-[0.22em] text-foreground md:text-xl"
           aria-label={`${site.name} — home`}
         >
           SMOKE CONNOISSEUR
@@ -63,7 +63,7 @@ export function Header() {
               aria-current={isActive(item.href) ? 'page' : undefined}
               className={cn(
                 'link-underline font-sans text-[0.78rem] uppercase tracking-[0.18em] transition-colors duration-300',
-                isActive(item.href) ? 'text-brass' : 'text-ivory/80 hover:text-ivory'
+                isActive(item.href) ? 'text-brass' : 'text-foreground/80 hover:text-foreground'
               )}
             >
               {item.label}
@@ -83,13 +83,13 @@ export function Header() {
           <span aria-hidden className="relative block h-3.5 w-6">
             <span
               className={cn(
-                'absolute left-0 h-px w-6 bg-ivory transition-all duration-500 ease-luxe',
+                'absolute left-0 h-px w-6 bg-foreground transition-all duration-500 ease-luxe',
                 menuOpen ? 'top-1/2 rotate-45' : 'top-0'
               )}
             />
             <span
               className={cn(
-                'absolute bottom-0 left-0 h-px w-6 bg-ivory transition-all duration-500 ease-luxe',
+                'absolute bottom-0 left-0 h-px w-6 bg-foreground transition-all duration-500 ease-luxe',
                 menuOpen ? 'bottom-1/2 -rotate-45' : 'bottom-0'
               )}
             />
@@ -109,7 +109,7 @@ export function Header() {
           >
             <nav
               aria-label="Mobile"
-              className="container-page flex flex-col gap-1 border-t border-hairline bg-ink pb-10 pt-4"
+              className="container-page flex flex-col gap-1 border-t border-hairline bg-surface pb-10 pt-4"
             >
               {primaryNav.map((item) => (
                 <Link
@@ -118,7 +118,7 @@ export function Header() {
                   aria-current={isActive(item.href) ? 'page' : undefined}
                   className={cn(
                     'border-b border-hairline py-4 font-serif text-2xl font-light',
-                    isActive(item.href) ? 'text-brass' : 'text-ivory'
+                    isActive(item.href) ? 'text-brass' : 'text-foreground'
                   )}
                 >
                   {item.label}

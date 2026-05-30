@@ -50,8 +50,8 @@ export function ContactForm() {
   if (sent) {
     return (
       <div role="status" className="border border-hairline p-10 text-center">
-        <p className="font-serif text-3xl font-light text-ivory">Thank you.</p>
-        <p className="mx-auto mt-4 max-w-sm text-pretty text-sm text-ivory-muted">
+        <p className="font-serif text-3xl font-light text-foreground">Thank you.</p>
+        <p className="mx-auto mt-4 max-w-sm text-pretty text-sm text-foreground-muted">
           Your enquiry has been received. We reply to every correspondence in
           person, and will be in touch shortly.
         </p>
@@ -80,24 +80,24 @@ export function ContactForm() {
       />
 
       <div className="flex flex-col gap-3">
-        <label htmlFor="subject" className="eyebrow text-ivory-faint">
+        <label htmlFor="subject" className="eyebrow text-foreground-faint">
           Subject
         </label>
         <select
           id="subject"
           value={fields.subject}
           onChange={(e) => update('subject', e.target.value)}
-          className="border-b border-hairline bg-transparent py-3 font-sans text-ivory focus:border-brass focus:outline-none"
+          className="border-b border-hairline bg-transparent py-3 font-sans text-foreground focus:border-brass focus:outline-none"
         >
-          <option className="bg-ink">General enquiry</option>
-          <option className="bg-ink">Commission an instrument</option>
-          <option className="bg-ink">The Connoisseur Circle</option>
-          <option className="bg-ink">Press</option>
+          <option className="bg-surface">General enquiry</option>
+          <option className="bg-surface">Commission an instrument</option>
+          <option className="bg-surface">The Connoisseur Circle</option>
+          <option className="bg-surface">Press</option>
         </select>
       </div>
 
       <div className="flex flex-col gap-3">
-        <label htmlFor="message" className="eyebrow text-ivory-faint">
+        <label htmlFor="message" className="eyebrow text-foreground-faint">
           Message
         </label>
         <textarea
@@ -107,7 +107,7 @@ export function ContactForm() {
           onChange={(e) => update('message', e.target.value)}
           aria-invalid={!!errors.message}
           aria-describedby={errors.message ? 'message-error' : undefined}
-          className="resize-none border-b border-hairline bg-transparent py-3 font-sans text-ivory placeholder:text-ivory-faint focus:border-brass focus:outline-none"
+          className="resize-none border-b border-hairline bg-transparent py-3 font-sans text-foreground placeholder:text-foreground-faint focus:border-brass focus:outline-none"
         />
         {errors.message && (
           <p id="message-error" role="alert" className="text-xs text-brass-light">
@@ -144,7 +144,7 @@ function Field({
 }) {
   return (
     <div className="flex flex-col gap-3">
-      <label htmlFor={id} className="eyebrow text-ivory-faint">
+      <label htmlFor={id} className="eyebrow text-foreground-faint">
         {label}
       </label>
       <input
@@ -156,7 +156,7 @@ function Field({
         aria-invalid={!!error}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          'border-b bg-transparent py-3 font-sans text-ivory focus:outline-none',
+          'border-b bg-transparent py-3 font-sans text-foreground focus:outline-none',
           error ? 'border-brass-light' : 'border-hairline focus:border-brass'
         )}
       />

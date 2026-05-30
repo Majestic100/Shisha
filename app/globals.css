@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    --color-ink: #0a0a0a;
-    --color-ivory: #f5f1ea;
-    --color-brass: #b08d57;
+    --color-surface: #fbf9f5;
+    --color-foreground: #15120d;
+    --color-brass: #8a6a2f;
   }
 
   html {
@@ -15,7 +15,7 @@
   }
 
   body {
-    @apply bg-ink font-sans text-ivory antialiased;
+    @apply bg-surface font-sans text-foreground antialiased;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -30,7 +30,7 @@
 
   ::selection {
     background: var(--color-brass);
-    color: var(--color-ink);
+    color: var(--color-surface);
   }
 
   :focus-visible {
@@ -40,7 +40,7 @@
 
   /* Remove number input spinners for the discreet aesthetic */
   input[type='email']:-webkit-autofill {
-    -webkit-text-fill-color: var(--color-ivory);
+    -webkit-text-fill-color: var(--color-foreground);
     transition: background-color 9999s ease-in-out 0s;
   }
 }

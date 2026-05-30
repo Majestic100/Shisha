@@ -43,7 +43,7 @@ export function SectionHeading({
       {intro && (
         <p
           className={cn(
-            'max-w-prose text-pretty text-ivory-muted',
+            'max-w-prose text-pretty text-foreground-muted',
             align === 'center' && 'mx-auto'
           )}
         >

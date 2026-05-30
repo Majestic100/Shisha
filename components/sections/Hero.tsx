@@ -18,19 +18,19 @@ export function Hero() {
         sizes="100vw"
         className="absolute inset-0 h-full w-full"
       />
-      {/* Legibility wash — no neon, no colour. */}
+      {/* Legibility wash — keeps the statement readable over the image. */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-gradient-to-t from-ink via-ink/40 to-ink/20"
+        className="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-surface/30"
       />
 
       <div className="container-page relative z-10 pb-20 md:pb-28">
         <div className="max-w-3xl animate-fade-up">
           <Eyebrow>Engineered for Legacy</Eyebrow>
-          <h1 className="mt-7 text-balance text-display font-light text-ivory">
+          <h1 className="mt-7 text-balance text-display font-light text-foreground">
             The first hookah, engineered in England.
           </h1>
-          <p className="mt-7 max-w-xl text-pretty text-base text-ivory-muted md:text-lg">
+          <p className="mt-7 max-w-xl text-pretty text-base text-foreground-muted md:text-lg">
             Machined from solid metal by the engineers behind Britain&rsquo;s
             finest motor cars. Built once, to be kept for a lifetime.
           </p>
@@ -47,10 +47,10 @@ export function Hero() {
 
       <span
         aria-hidden
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-ivory-faint md:flex"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-foreground-faint md:flex"
       >
         <span className="text-[0.65rem] uppercase tracking-[0.3em]">Scroll</span>
-        <span className="h-10 w-px animate-scroll-cue bg-ivory-faint" />
+        <span className="h-10 w-px animate-scroll-cue bg-foreground-faint" />
       </span>
     </section>
   )

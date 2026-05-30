@@ -71,10 +71,10 @@ export default function CraftsmanshipPage() {
                   }`}
                 >
                   <p className="font-serif text-5xl font-light text-brass">{stage.n}</p>
-                  <h2 className="mt-6 text-balance text-h2 font-light text-ivory">
+                  <h2 className="mt-6 text-balance text-h2 font-light text-foreground">
                     {stage.title}
                   </h2>
-                  <p className="mt-6 text-pretty text-lg leading-relaxed text-ivory-muted">
+                  <p className="mt-6 text-pretty text-lg leading-relaxed text-foreground-muted">
                     {stage.body}
                   </p>
                 </Reveal>
@@ -99,9 +99,9 @@ export default function CraftsmanshipPage() {
                 { v: '40+', l: 'Operations per instrument' },
                 { v: '100%', l: 'Inspected by hand' },
               ].map((stat) => (
-                <div key={stat.l} className="bg-ink p-10">
-                  <p className="font-serif text-4xl font-light text-ivory">{stat.v}</p>
-                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-ivory-faint">
+                <div key={stat.l} className="bg-surface p-10">
+                  <p className="font-serif text-4xl font-light text-foreground">{stat.v}</p>
+                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-foreground-faint">
                     {stat.l}
                   </p>
                 </div>

@@ -18,11 +18,11 @@ export function PageHeader({
       <Container>
         <div className="animate-fade-up">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-7 max-w-4xl text-balance text-h1 font-light text-ivory">
+          <h1 className="mt-7 max-w-4xl text-balance text-h1 font-light text-foreground">
             {title}
           </h1>
           {intro && (
-            <p className="mt-8 max-w-prose text-pretty text-lg text-ivory-muted">
+            <p className="mt-8 max-w-prose text-pretty text-lg text-foreground-muted">
               {intro}
             </p>
           )}

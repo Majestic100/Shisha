@@ -44,15 +44,15 @@ export default function JournalPage() {
                     />
                   </div>
                   <div className="lg:col-span-5">
-                    <p className="flex items-center gap-4 text-xs uppercase tracking-[0.16em] text-ivory-faint">
+                    <p className="flex items-center gap-4 text-xs uppercase tracking-[0.16em] text-foreground-faint">
                       <span className="text-brass">{lead.category}</span>
                       <span aria-hidden>·</span>
                       <span>{formatDate(lead.date)}</span>
                     </p>
-                    <h2 className="mt-6 text-balance text-h2 font-light text-ivory transition-colors group-hover:text-brass-light">
+                    <h2 className="mt-6 text-balance text-h2 font-light text-foreground transition-colors group-hover:text-brass-light">
                       {lead.title}
                     </h2>
-                    <p className="mt-5 max-w-prose text-pretty text-ivory-muted">
+                    <p className="mt-5 max-w-prose text-pretty text-foreground-muted">
                       {lead.excerpt}
                     </p>
                     <span className="mt-7 inline-block text-[0.72rem] uppercase tracking-[0.2em] text-brass">
@@ -82,15 +82,15 @@ export default function JournalPage() {
                         className="transition-transform duration-[1200ms] ease-luxe group-hover:scale-[1.03]"
                       />
                     </div>
-                    <p className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-ivory-faint">
+                    <p className="mt-6 flex items-center gap-3 text-xs uppercase tracking-[0.16em] text-foreground-faint">
                       <span className="text-brass">{entry.category}</span>
                       <span aria-hidden>·</span>
                       <span>{entry.readingTime}</span>
                     </p>
-                    <h3 className="mt-4 text-balance font-serif text-2xl font-light text-ivory transition-colors group-hover:text-brass-light">
+                    <h3 className="mt-4 text-balance font-serif text-2xl font-light text-foreground transition-colors group-hover:text-brass-light">
                       {entry.title}
                     </h3>
-                    <p className="mt-3 text-pretty text-sm text-ivory-muted">
+                    <p className="mt-3 text-pretty text-sm text-foreground-muted">
                       {entry.excerpt}
                     </p>
                   </Link>

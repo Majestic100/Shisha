@@ -38,7 +38,7 @@ export default function ContactPage() {
               <Reveal className="space-y-12">
                 <div>
                   <Eyebrow>The Works</Eyebrow>
-                  <address className="mt-5 not-italic text-ivory-muted">
+                  <address className="mt-5 not-italic text-foreground-muted">
                     {site.contact.address.line1}
                     <br />
                     {site.contact.address.line2}
@@ -52,7 +52,7 @@ export default function ContactPage() {
                   <p className="mt-5">
                     <a
                       href={`mailto:${site.contact.email}`}
-                      className="link-underline text-ivory transition-colors hover:text-brass"
+                      className="link-underline text-foreground transition-colors hover:text-brass"
                     >
                       {site.contact.email}
                     </a>
@@ -60,7 +60,7 @@ export default function ContactPage() {
                   <p className="mt-2">
                     <a
                       href={`tel:${site.contact.phone.replace(/[^+\d]/g, '')}`}
-                      className="link-underline text-ivory-muted transition-colors hover:text-ivory"
+                      className="link-underline text-foreground-muted transition-colors hover:text-foreground"
                     >
                       {site.contact.phone}
                     </a>
@@ -74,7 +74,7 @@ export default function ContactPage() {
                       href={site.social.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="link-underline text-ivory transition-colors hover:text-brass"
+                      className="link-underline text-foreground transition-colors hover:text-brass"
                     >
                       {site.social.instagramHandle}
                     </a>

@@ -19,7 +19,7 @@ export default function OpengraphImage() {
           flexDirection: 'column',
           alignItems: 'flex-start',
           justifyContent: 'space-between',
-          backgroundColor: '#0A0A0A',
+          backgroundColor: '#FBF9F5',
           padding: '80px',
           fontFamily: 'serif',
         }}
@@ -29,13 +29,13 @@ export default function OpengraphImage() {
             display: 'flex',
             alignItems: 'center',
             gap: '20px',
-            color: '#B08D57',
+            color: '#8A6A2F',
             fontSize: 24,
             letterSpacing: 6,
             textTransform: 'uppercase',
           }}
         >
-          <div style={{ width: 56, height: 2, backgroundColor: '#B08D57' }} />
+          <div style={{ width: 56, height: 2, backgroundColor: '#8A6A2F' }} />
           {site.tagline}
         </div>
 
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            color: '#F5F1EA',
+            color: '#15120D',
           }}
         >
           <div style={{ fontSize: 88, lineHeight: 1.05, maxWidth: 940 }}>
@@ -57,16 +57,16 @@ export default function OpengraphImage() {
             width: '100%',
             justifyContent: 'space-between',
             alignItems: 'center',
-            borderTop: '1px solid rgba(245,241,234,0.2)',
+            borderTop: '1px solid rgba(21,18,13,0.18)',
             paddingTop: '32px',
-            color: '#F5F1EA',
+            color: '#15120D',
             fontSize: 30,
             letterSpacing: 8,
             textTransform: 'uppercase',
           }}
         >
           <span>Smoke Connoisseur</span>
-          <span style={{ color: '#B08D57', fontSize: 22, letterSpacing: 4 }}>
+          <span style={{ color: '#8A6A2F', fontSize: 22, letterSpacing: 4 }}>
             Made in England
           </span>
         </div>

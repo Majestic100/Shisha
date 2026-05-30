@@ -20,6 +20,7 @@ export function Media({
   sizes = '100vw',
   priority = false,
   aspect,
+  tone = 'light',
   className,
   imgClassName,
 }: {
@@ -29,24 +30,32 @@ export function Media({
   priority?: boolean
   /** CSS aspect-ratio, e.g. "4 / 5". Ignored when the parent sets a height. */
   aspect?: string
+  /** Placeholder panel tone. 'light' suits the white theme; 'dark' for hero use. */
+  tone?: 'light' | 'dark'
   className?: string
   imgClassName?: string
 }) {
   const [errored, setErrored] = useState(false)
+  const dark = tone === 'dark'
 
   return (
     <div
-      className={cn('relative overflow-hidden bg-ink-raised', className)}
+      className={cn('relative overflow-hidden bg-surface-raised', className)}
       style={aspect ? { aspectRatio: aspect } : undefined}
     >
       {/* Machined-panel fallback: visible until/unless a real photo loads */}
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(120%_120%_at_30%_20%,#1b1714_0%,#0d0b09_55%,#070605_100%)]"
+        className={cn(
+          'absolute inset-0',
+          dark
+            ? 'bg-[radial-gradient(120%_120%_at_30%_20%,#1b1714_0%,#0d0b09_55%,#070605_100%)]'
+            : 'bg-[radial-gradient(120%_120%_at_30%_20%,#f3eee4_0%,#e7e0d3_55%,#dcd3c2_100%)]'
+        )}
       />
       <div
         aria-hidden
-        className="absolute inset-0 opacity-[0.07] [background-image:repeating-linear-gradient(90deg,transparent,transparent_2px,#B08D57_2px,#B08D57_3px)]"
+        className="absolute inset-0 opacity-[0.07] [background-image:repeating-linear-gradient(90deg,transparent,transparent_2px,#8A6A2F_2px,#8A6A2F_3px)]"
       />
       {!errored && (
         <Image

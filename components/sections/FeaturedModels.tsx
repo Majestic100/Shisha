@@ -13,7 +13,7 @@ export function FeaturedModels() {
   const featured = getFeaturedProducts().slice(0, 3)
 
   return (
-    <section className="bg-ink py-section">
+    <section className="bg-surface py-section">
       <Container>
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <SectionHeading

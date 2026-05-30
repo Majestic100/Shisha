@@ -46,12 +46,12 @@ export default function HeritagePage() {
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="lg:col-span-4">
               <Eyebrow>The Engineers</Eyebrow>
-              <h2 className="mt-6 text-balance text-h2 font-light text-ivory">
+              <h2 className="mt-6 text-balance text-h2 font-light text-foreground">
                 The hands that build supercars.
               </h2>
             </Reveal>
             <Reveal delay={0.1} className="lg:col-span-7 lg:col-start-6">
-              <div className="space-y-6 text-pretty text-lg leading-relaxed text-ivory-muted">
+              <div className="space-y-6 text-pretty text-lg leading-relaxed text-foreground-muted">
                 <p>
                   Our instruments are machined by engineers whose other work
                   carries names you already know. Components for Aston Martin.
@@ -87,10 +87,10 @@ export default function HeritagePage() {
           <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
             <Reveal className="order-2 lg:order-1 lg:col-span-6">
               <Eyebrow>The Cabinetmaker</Eyebrow>
-              <h2 className="mt-6 text-balance text-h2 font-light text-ivory">
+              <h2 className="mt-6 text-balance text-h2 font-light text-foreground">
                 A craftsman who once furnished a Queen.
               </h2>
-              <div className="mt-7 space-y-6 text-pretty text-lg leading-relaxed text-ivory-muted">
+              <div className="mt-7 space-y-6 text-pretty text-lg leading-relaxed text-foreground-muted">
                 <p>
                   Among those who shape the house is a cabinetmaker who built
                   furniture for Her Majesty Queen Elizabeth II. His joinery does
@@ -121,11 +121,11 @@ export default function HeritagePage() {
       </section>
 
       {/* The process, in brief */}
-      <section className="border-t border-hairline bg-ink-raised py-section">
+      <section className="border-t border-hairline bg-surface-raised py-section">
         <Container>
           <Reveal className="max-w-2xl">
             <Eyebrow>From Block to Heirloom</Eyebrow>
-            <h2 className="mt-6 text-balance text-h2 font-light text-ivory">
+            <h2 className="mt-6 text-balance text-h2 font-light text-foreground">
               Four weeks. Forty operations. No shortcuts.
             </h2>
           </Reveal>
@@ -140,13 +140,13 @@ export default function HeritagePage() {
                 as="div"
                 key={step.n}
                 delay={i * 0.08}
-                className="bg-ink p-8 md:p-10"
+                className="bg-surface p-8 md:p-10"
               >
                 <p className="font-serif text-4xl font-light text-brass">{step.n}</p>
-                <h3 className="mt-6 font-serif text-2xl font-light text-ivory">
+                <h3 className="mt-6 font-serif text-2xl font-light text-foreground">
                   {step.t}
                 </h3>
-                <p className="mt-3 text-pretty text-sm text-ivory-muted">{step.d}</p>
+                <p className="mt-3 text-pretty text-sm text-foreground-muted">{step.d}</p>
               </Reveal>
             ))}
           </div>

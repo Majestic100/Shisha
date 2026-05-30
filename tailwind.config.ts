@@ -9,23 +9,27 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          DEFAULT: '#0A0A0A',
-          raised: '#121212',
+        // Role-based tokens. Warm-white luxury palette: ivory paper, near-black
+        // ink text, antique-brass accent. `surface` = page/background,
+        // `foreground` = text/marks.
+        surface: {
+          DEFAULT: '#FBF9F5',
+          raised: '#F1ECE3',
         },
-        ivory: {
-          DEFAULT: '#F5F1EA',
-          muted: 'rgba(245, 241, 234, 0.64)',
-          faint: 'rgba(245, 241, 234, 0.40)',
+        foreground: {
+          DEFAULT: '#15120D',
+          muted: 'rgba(21, 18, 13, 0.72)',
+          faint: 'rgba(21, 18, 13, 0.58)',
         },
         brass: {
-          DEFAULT: '#B08D57',
-          light: '#C9A876',
+          // Darkened for WCAG AA contrast on warm white (~4.9:1 for small text).
+          DEFAULT: '#8A6A2F',
+          light: '#A9854A',
         },
         graphite: {
-          DEFAULT: '#3A3A3A',
+          DEFAULT: '#6B6760',
         },
-        hairline: 'rgba(245, 241, 234, 0.12)',
+        hairline: 'rgba(21, 18, 13, 0.14)',
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],

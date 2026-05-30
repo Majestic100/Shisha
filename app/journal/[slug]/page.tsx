@@ -38,17 +38,17 @@ export default function JournalEntryPage({ params }: Params) {
         <header className="border-b border-hairline pb-16 pt-40 md:pt-52">
           <Container>
             <Reveal className="mx-auto max-w-prose text-center">
-              <p className="flex items-center justify-center gap-4 text-xs uppercase tracking-[0.16em] text-ivory-faint">
+              <p className="flex items-center justify-center gap-4 text-xs uppercase tracking-[0.16em] text-foreground-faint">
                 <span className="text-brass">{entry.category}</span>
                 <span aria-hidden>·</span>
                 <span>{formatDate(entry.date)}</span>
                 <span aria-hidden>·</span>
                 <span>{entry.readingTime}</span>
               </p>
-              <h1 className="mt-8 text-balance text-h1 font-light text-ivory">
+              <h1 className="mt-8 text-balance text-h1 font-light text-foreground">
                 {entry.title}
               </h1>
-              <p className="mt-6 text-pretty text-lg italic text-ivory-muted">
+              <p className="mt-6 text-pretty text-lg italic text-foreground-muted">
                 {entry.excerpt}
               </p>
             </Reveal>
@@ -71,7 +71,7 @@ export default function JournalEntryPage({ params }: Params) {
                 return (
                   <Reveal key={i}>
                     <blockquote className="my-12 border-l border-brass pl-8">
-                      <p className="text-balance font-serif text-3xl font-light italic leading-snug text-ivory">
+                      <p className="text-balance font-serif text-3xl font-light italic leading-snug text-foreground">
                         {para.slice(2)}
                       </p>
                     </blockquote>
@@ -80,7 +80,7 @@ export default function JournalEntryPage({ params }: Params) {
               }
               return (
                 <Reveal key={i}>
-                  <p className="mb-7 text-pretty text-lg leading-relaxed text-ivory-muted">
+                  <p className="mb-7 text-pretty text-lg leading-relaxed text-foreground-muted">
                     {para}
                   </p>
                 </Reveal>
