@@ -36,7 +36,7 @@ const config: Config = {
         sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'Segoe UI', 'sans-serif'],
       },
       fontSize: {
-        display: ['clamp(3rem, 8vw, 7.5rem)', { lineHeight: '0.98', letterSpacing: '-0.02em' }],
+        display: ['clamp(2.5rem, 6vw, 6rem)', { lineHeight: '1.0', letterSpacing: '-0.02em' }],
         h1: ['clamp(2.5rem, 5.5vw, 4.75rem)', { lineHeight: '1.04', letterSpacing: '-0.015em' }],
         h2: ['clamp(2rem, 3.6vw, 3.25rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
         h3: ['clamp(1.5rem, 2.4vw, 2.125rem)', { lineHeight: '1.15', letterSpacing: '-0.005em' }],

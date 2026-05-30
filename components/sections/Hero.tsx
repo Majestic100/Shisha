@@ -8,7 +8,7 @@ import { Eyebrow } from '@/components/ui/Eyebrow'
  */
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden">
+    <section className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden">
       <Media
         asset={{
           src: '/images/hero.jpg',
@@ -24,7 +24,7 @@ export function Hero() {
         className="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-surface/30"
       />
 
-      <div className="container-page relative z-10 pb-20 md:pb-28">
+      <div className="container-page relative z-10 pb-20 pt-28 md:pb-28 md:pt-36">
         <div className="max-w-3xl animate-fade-up">
           <Eyebrow>Engineered for Legacy</Eyebrow>
           <h1 className="mt-7 text-balance text-display font-light text-foreground">
