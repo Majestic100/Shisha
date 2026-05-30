@@ -50,7 +50,7 @@ export function Media({
           'absolute inset-0',
           dark
             ? 'bg-[radial-gradient(120%_120%_at_30%_20%,#1b1714_0%,#0d0b09_55%,#070605_100%)]'
-            : 'bg-[radial-gradient(120%_120%_at_30%_20%,#f3eee4_0%,#e7e0d3_55%,#dcd3c2_100%)]'
+            : 'bg-[radial-gradient(120%_120%_at_30%_20%,#fafafa_0%,#efefee_55%,#e4e3e1_100%)]'
         )}
       />
       <div

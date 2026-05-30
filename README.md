@@ -70,8 +70,8 @@ Tokens are role-based, so the palette can be re-themed in one place
 
 | Token | Value | Use |
 | --- | --- | --- |
-| `surface` | `#FBF9F5` | Primary background (warm white) |
-| `surface-raised` | `#F1ECE3` | Cards, alternating sections |
+| `surface` | `#FFFFFF` | Primary background (white) |
+| `surface-raised` | `#F4F3F1` | Cards, alternating sections |
 | `foreground` | `#15120D` | Primary text (near-black) |
 | `foreground-muted` / `foreground-faint` | foreground @ 72% / 58% | Secondary / tertiary text |
 | `brass` / `brass-light` | `#8A6A2F` / `#A9854A` | Accent, hover (AA-contrast on white) |

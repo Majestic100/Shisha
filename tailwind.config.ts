@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Role-based tokens. Warm-white luxury palette: ivory paper, near-black
+        // Role-based tokens. Clean white luxury palette: white paper, near-black
         // ink text, antique-brass accent. `surface` = page/background,
         // `foreground` = text/marks.
         surface: {
-          DEFAULT: '#FBF9F5',
-          raised: '#F1ECE3',
+          DEFAULT: '#FFFFFF',
+          raised: '#F4F3F1',
         },
         foreground: {
           DEFAULT: '#15120D',
