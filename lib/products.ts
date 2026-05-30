@@ -205,9 +205,7 @@ export const products: Product[] = [
       },
     ],
     gallery: [
-      { src: '/images/products/shakespeare-lounge/01.jpg', alt: 'Shakespeare Lounge hookah, full instrument' },
-      { src: '/images/products/shakespeare-lounge/02.jpg', alt: 'Shakespeare Lounge fitting detail' },
-      { src: '/images/products/shakespeare-lounge/03.jpg', alt: 'Shakespeare Lounge base detail' },
+      { src: '/images/products/shakespeare-lounge/01.webp', alt: 'Shakespeare Lounge hookah, wooden stem and clear glass base on a dark ground' },
     ],
     featured: false,
     order: 5,
