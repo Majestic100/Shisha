@@ -170,9 +170,8 @@ export const products: Product[] = [
       },
     ],
     gallery: [
-      { src: '/images/products/london/01.jpg', alt: 'London hookah, telephone-box form, full instrument' },
-      { src: '/images/products/london/02.jpg', alt: 'London purge detail through the form' },
-      { src: '/images/products/london/03.jpg', alt: 'London base and fittings' },
+      { src: '/images/products/london/01.webp', alt: 'London hookah, red telephone-box form with clear glass base on a dark ground' },
+      { src: '/images/products/london/02.webp', alt: 'London hookah, telephone-box form from an alternate angle with velvet-touch hose' },
     ],
     featured: false,
     order: 4,
