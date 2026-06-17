@@ -134,16 +134,26 @@
     }
     .map-pulse { transform-box: fill-box; transform-origin: center; animation: pulse-dot 2.4s ease-out infinite; }
 
+    /* ---- Totrins-formular: blød indtoning af kontaktfelter ---- */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .extra-fields.revealing { animation: fadeInUp 0.35s ease both; }
+
+    /* ---- Sticky mobil-CTA ---- */
+    #mobile-cta { transition: transform 0.35s cubic-bezier(0.22,1,0.36,1); }
+    #mobile-cta.is-hidden { transform: translateY(130%); }
+
     /* Reduceret bevægelse */
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
+      .extra-fields.revealing { animation: none; }
       html { scroll-behavior: auto; }
       .map-pulse { animation: none; }
+      #mobile-cta { transition: none; }
     }
   </style>
 </head>
 
-<body class="bg-white antialiased">
+<body class="bg-white antialiased pb-20 md:pb-0">
 
   <!-- ============================================================ -->
   <!-- 1. STICKY HEADER                                             -->
@@ -177,7 +187,7 @@
           </a>
 
           <a href="#tilbud" class="btn-cta inline-flex items-center gap-2 bg-brand text-white text-sm font-bold rounded-xl px-4 sm:px-5 py-2.5 shadow-soft">
-            Få tilbud
+            Få gratis tilbud
             <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
         </div>
@@ -216,9 +226,15 @@
             Vi køber din brugte bil og sender den ud af landet. Derfor kan vi betale dig mere end det danske marked. Indtast din nummerplade og få et uforpligtende tilbud inden for få timer.
           </p>
 
-          <!-- Lead-formular (hero) -->
+          <!-- Værdi-badge: gennemsnitligt merbeløb (CRO: sæt løftet på tal) -->
+          <div class="mt-5 inline-flex items-center gap-2.5 bg-tp/10 rounded-xl px-4 py-2.5">
+            <svg class="w-5 h-5 text-tp shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5h-5"/></svg>
+            <p class="text-sm text-ink"><strong>Sælgere får i snit 18.500 kr mere</strong> end den danske markedspris<span class="text-ink/50">*</span></p>
+          </div>
+
+          <!-- Lead-formular (hero): totrins for lav friktion og bedre lead-kvalitet -->
           <!-- GHL: her kobles formularen til GoHighLevel via embed eller webhook -->
-          <form class="lead-form mt-7 max-w-lg" novalidate>
+          <form class="lead-form mt-6 max-w-lg" novalidate>
             <label class="block text-sm font-semibold text-ink mb-2">Indtast din nummerplade</label>
             <div class="flex flex-col sm:flex-row gap-3">
               <div class="plate flex-1">
@@ -231,22 +247,29 @@
                   name="nummerplade"
                   class="plate__input"
                   placeholder="AB 12 345"
-                  maxlength="8"
+                  maxlength="9"
                   autocomplete="off"
+                  inputmode="text"
                   aria-label="Nummerplade"
                   required />
               </div>
-              <button type="submit" class="btn-cta whitespace-nowrap bg-brand text-white font-bold rounded-xl px-6 py-4 shadow-soft">
+              <button type="submit" class="form-submit btn-cta whitespace-nowrap bg-brand text-white font-bold rounded-xl px-6 py-4 shadow-soft">
                 Få mit tilbud
               </button>
             </div>
-            <!-- Skjulte felter (vises i tak-flow) men indsendes til GHL -->
-            <div class="extra-fields hidden mt-3 grid sm:grid-cols-3 gap-3">
-              <input type="text" name="navn" placeholder="Dit navn" class="rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
-              <input type="tel" name="telefon" placeholder="Telefon" class="rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
-              <input type="email" name="email" placeholder="Email" class="rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
+            <!-- Trin 2: kontaktfelter (foldes ind når pladen er udfyldt) men indsendes til GHL -->
+            <div class="extra-fields hidden mt-3 grid sm:grid-cols-2 gap-3">
+              <input type="text" name="navn" autocomplete="name" placeholder="Dit navn" class="rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
+              <input type="tel" name="telefon" autocomplete="tel" inputmode="tel" placeholder="Telefon" class="rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
+              <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="Email (valgfri)" class="sm:col-span-2 rounded-xl border border-black/15 px-4 py-3 text-sm focus:border-trust focus:ring-2 focus:ring-trust/20 outline-none" />
             </div>
             <p class="form-error hidden mt-2 text-sm text-brand font-medium"></p>
+
+            <!-- Reassurance-microcopy (CRO: fjern friktion ved knappen) -->
+            <p class="mt-3 flex items-center gap-1.5 text-xs text-ink/55">
+              <svg class="w-3.5 h-3.5 text-tp shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Tager under 30 sekunder · Ingen binding · Vi videresælger ikke dine oplysninger
+            </p>
 
             <!-- Tre trust-punkter -->
             <ul class="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-ink/70">
@@ -261,6 +284,7 @@
             <span class="tp-stars flex"></span>
             <span class="text-sm text-ink/70"><strong class="text-ink">Fremragende</strong> · 4,8 ud af 5 på <strong class="text-tp">Trustpilot</strong> · 1.247 anmeldelser</span>
           </div>
+          <p class="mt-3 text-xs text-ink/45 max-w-lg">*Gennemsnitligt merbeløb sammenlignet med vejledende dansk markedspris. Tallet er et eksempel og varierer efter bil, stand og model.</p>
         </div>
 
         <!-- Højre: hero-billede -->
@@ -328,6 +352,32 @@
             <svg class="w-5 h-5 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9c1.5 0 2.91.37 4.15 1.02"/></svg>
           </div>
           <p class="text-sm font-semibold leading-tight">Helt uforpligtende</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- 3b. TRUST-STRIBE MED NØGLETAL (CRO: skala og troværdighed)   -->
+  <!-- ============================================================ -->
+  <section class="bg-white border-b border-black/5">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div class="reveal">
+          <p class="text-3xl sm:text-4xl font-extrabold text-ink"><span class="counter" data-target="12400">0</span>+</p>
+          <p class="text-sm text-ink/60 mt-1">Biler købt i Danmark</p>
+        </div>
+        <div class="reveal" style="transition-delay:80ms">
+          <p class="text-3xl sm:text-4xl font-extrabold text-ink"><span class="counter" data-target="184">0</span> mio.</p>
+          <p class="text-sm text-ink/60 mt-1">Kroner udbetalt til sælgere</p>
+        </div>
+        <div class="reveal" style="transition-delay:160ms">
+          <p class="text-3xl sm:text-4xl font-extrabold text-tp">4,8/5</p>
+          <p class="text-sm text-ink/60 mt-1">Vurdering på Trustpilot</p>
+        </div>
+        <div class="reveal" style="transition-delay:240ms">
+          <p class="text-3xl sm:text-4xl font-extrabold text-ink">~2 timer</p>
+          <p class="text-sm text-ink/60 mt-1">Typisk svartid på hverdage</p>
         </div>
       </div>
     </div>
@@ -926,15 +976,19 @@
           <input type="text" name="nummerplade" class="plate__input" placeholder="AB 12 345" maxlength="8" autocomplete="off" aria-label="Nummerplade" required />
         </div>
         <div class="grid sm:grid-cols-3 gap-3">
-          <input type="text" name="navn" placeholder="Dit navn" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
-          <input type="tel" name="telefon" placeholder="Telefon" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
-          <input type="email" name="email" placeholder="Email" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
+          <input type="text" name="navn" autocomplete="name" placeholder="Dit navn" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
+          <input type="tel" name="telefon" autocomplete="tel" inputmode="tel" placeholder="Telefon" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
+          <input type="email" name="email" autocomplete="email" inputmode="email" placeholder="Email (valgfri)" class="rounded-xl bg-white/95 px-4 py-3.5 text-sm outline-none focus:ring-2 focus:ring-brand" />
         </div>
         <p class="form-error hidden mt-2 text-sm text-white font-medium bg-brand/80 rounded-lg px-3 py-2"></p>
-        <button type="submit" class="btn-cta w-full mt-4 bg-brand text-white font-bold rounded-xl px-6 py-4 shadow-soft text-lg">
+        <button type="submit" class="form-submit btn-cta w-full mt-4 bg-brand text-white font-bold rounded-xl px-6 py-4 shadow-soft text-lg">
           Få mit tilbud nu
         </button>
-        <p class="mt-3 text-center text-xs text-white/50">Ved at indsende accepterer du, at vi kontakter dig om dit tilbud. Helt uforpligtende.</p>
+        <p class="mt-3 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-center text-xs text-white/55">
+          <span class="inline-flex items-center gap-1"><svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Tager 30 sekunder</span>
+          <span>·</span><span>Ingen binding</span>
+          <span>·</span><span>Vi videresælger ikke dine data</span>
+        </p>
       </form>
     </div>
   </section>
@@ -1019,6 +1073,20 @@
   </footer>
 
   <!-- ============================================================ -->
+  <!-- STICKY MOBIL-CTA (CRO: altid synlig handling på mobil)       -->
+  <!-- ============================================================ -->
+  <div id="mobile-cta" class="md:hidden fixed bottom-0 inset-x-0 z-50 bg-white/95 backdrop-blur border-t border-black/10 px-4 py-3 flex items-center gap-3 shadow-[0_-8px_30px_-12px_rgba(11,11,12,0.25)]">
+    <!-- SWAP: rigtigt telefonnummer -->
+    <a href="tel:+4570605040" class="shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-xl border border-black/15 text-ink" aria-label="Ring til os">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    </a>
+    <a href="#tilbud" class="btn-cta flex-1 inline-flex items-center justify-center gap-2 bg-brand text-white font-bold rounded-xl py-3.5 shadow-soft">
+      Få dit gratis tilbud
+      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <!-- ============================================================ -->
   <!-- TAK-MODAL (vises efter formular-submit)                      -->
   <!-- ============================================================ -->
   <div id="thanks-modal" class="fixed inset-0 z-[60] hidden items-center justify-center p-4">
@@ -1028,7 +1096,7 @@
         <svg class="w-8 h-8 text-tp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
       <h3 class="text-2xl font-extrabold text-ink">Tak for din henvendelse</h3>
-      <p class="mt-3 text-ink/70">Vi har modtaget din nummerplade <strong id="thanks-plate" class="text-ink"></strong> og vender tilbage med dit uforpligtende tilbud inden for få timer.</p>
+      <p class="mt-3 text-ink/70">Vi har modtaget din nummerplade <strong id="thanks-plate" class="text-ink"></strong> og vender tilbage på telefon eller sms med dit uforpligtende tilbud inden for få timer.</p>
       <button data-close class="btn-cta mt-6 bg-brand text-white font-bold rounded-xl px-6 py-3.5 w-full shadow-soft">Luk</button>
     </div>
   </div>
@@ -1100,19 +1168,22 @@
       counters.forEach((el) => obs.observe(el));
     })();
 
-    /* ---------- 3. Nummerplade: auto-format + validering ---------- */
-    // Dansk plade: typisk 2 bogstaver + 5 cifre (fx AB 12 345)
+    /* ---------- 3. Nummerplade og kontakt: format + lempelig validering ---------- */
     function formatPlate(value) {
-      return value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 7);
+      return value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
     }
+    // Lempelig validering, så ægte danske plader (vare-, person- og historiske) ikke blokeres
     function isValidPlate(value) {
-      const clean = value.replace(/\s/g, '').toUpperCase();
-      // 2 bogstaver efterfulgt af 4-5 cifre dækker langt de fleste danske plader
-      return /^[A-Z]{2}[0-9]{4,5}$/.test(clean);
+      const clean = (value || '').replace(/\s/g, '').toUpperCase();
+      if (/^[A-Z]{2}[0-9]{3,7}$/.test(clean)) return true;        // klassisk: 2 bogstaver + cifre
+      return /^[A-Z0-9]{4,8}$/.test(clean) && /[0-9]/.test(clean); // personlige/blandede plader
     }
     function isValidEmail(value) {
-      if (!value) return true; // email er valgfri i dette udkast indtil tak-flow
+      if (!value) return true; // email er valgfri
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+    function isValidPhone(value) {
+      return ((value || '').replace(/\D/g, '')).length >= 8; // mindst 8 cifre
     }
 
     document.querySelectorAll('.plate__input').forEach((input) => {
@@ -1122,7 +1193,7 @@
       });
     });
 
-    /* ---------- 4. Lead-formular submit (tak-besked uden reload) ---------- */
+    /* ---------- 4. Lead-formular: totrins-flow + tak-besked uden reload ---------- */
     const modal = document.getElementById('thanks-modal');
     const thanksPlate = document.getElementById('thanks-plate');
 
@@ -1140,42 +1211,69 @@
     modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', closeModal));
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
+    function showError(form, msg, focusEl) {
+      const errorEl = form.querySelector('.form-error');
+      if (errorEl) { errorEl.textContent = msg; errorEl.classList.remove('hidden'); }
+      if (focusEl) focusEl.focus();
+    }
+
     document.querySelectorAll('.lead-form').forEach((form) => {
+      const submitBtn = form.querySelector('.form-submit');
+      const step1Label = submitBtn ? submitBtn.textContent.trim() : 'Send';
+
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         const plateInput = form.querySelector('input[name="nummerplade"]');
+        const navnInput = form.querySelector('input[name="navn"]');
+        const telInput = form.querySelector('input[name="telefon"]');
         const emailInput = form.querySelector('input[name="email"]');
         const errorEl = form.querySelector('.form-error');
         const plateWrap = form.querySelector('.plate');
+        const extra = form.querySelector('.extra-fields');
 
         // Nulstil fejl
         if (errorEl) { errorEl.classList.add('hidden'); errorEl.textContent = ''; }
         plateWrap && plateWrap.classList.remove('is-invalid');
 
-        // Valider nummerplade
+        // Pladen skal altid være gyldig
         if (!isValidPlate(plateInput.value)) {
           plateWrap && plateWrap.classList.add('is-invalid');
-          if (errorEl) {
-            errorEl.textContent = 'Indtast en gyldig dansk nummerplade, fx AB 12 345.';
-            errorEl.classList.remove('hidden');
-          }
-          plateInput.focus();
+          showError(form, 'Indtast en gyldig nummerplade, fx AB 12 345.', plateInput);
           return;
         }
 
-        // Valider email (hvis feltet findes og er udfyldt)
+        // TRIN 1: er kontaktfelterne stadig skjult, så fold dem ind og stop her (lav friktion)
+        if (extra && extra.classList.contains('hidden')) {
+          extra.classList.remove('hidden');
+          extra.classList.add('revealing');
+          if (submitBtn) submitBtn.textContent = 'Send og få tilbud';
+          navnInput && navnInput.focus();
+          return;
+        }
+
+        // TRIN 2 (eller enkelttrins-form): valider kontaktoplysninger
+        if (navnInput && !navnInput.value.trim()) {
+          showError(form, 'Skriv venligst dit navn.', navnInput);
+          return;
+        }
+        if (telInput && !isValidPhone(telInput.value)) {
+          showError(form, 'Indtast et gyldigt telefonnummer (mindst 8 cifre).', telInput);
+          return;
+        }
         if (emailInput && !isValidEmail(emailInput.value)) {
-          if (errorEl) {
-            errorEl.textContent = 'Indtast en gyldig emailadresse.';
-            errorEl.classList.remove('hidden');
-          }
-          emailInput.focus();
+          showError(form, 'Indtast en gyldig emailadresse, eller lad feltet stå tomt.', emailInput);
           return;
         }
 
-        // GHL: her sendes data til GoHighLevel (webhook/embed). I dette udkast vises kun tak-besked.
+        // GHL: her sendes data (nummerplade, navn, telefon, email) til GoHighLevel via webhook/embed.
+        // I dette udkast vises kun tak-beskeden.
         openModal(plateInput.value.replace(/\s/g, ''));
         form.reset();
+        if (extra && submitBtn) {
+          extra.classList.add('hidden');
+          extra.classList.remove('revealing');
+          submitBtn.textContent = step1Label;
+        }
       });
     });
 
@@ -1201,6 +1299,20 @@
         setTimeout(() => { el.style.transform = ''; }, 160);
       });
     });
+
+    /* ---------- 7. Sticky mobil-CTA: skjul når den afsluttende formular er synlig ---------- */
+    (function mobileCta() {
+      const bar = document.getElementById('mobile-cta');
+      const target = document.getElementById('tilbud');
+      if (!bar || !target || !('IntersectionObserver' in window)) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          // Undgå dobbelt-CTA: skjul baren mens den store formular i bunden er i syne
+          bar.classList.toggle('is-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.25 });
+      obs.observe(target);
+    })();
   </script>
 </body>
 </html>
