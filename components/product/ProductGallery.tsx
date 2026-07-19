@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
+import { useReducedMotion } from 'framer-motion'
 import { Media } from '@/components/ui/Media'
 import { cn } from '@/lib/utils'
 import type { MediaAsset } from '@/types'
@@ -39,22 +39,29 @@ export function ProductGallery({ images, name }: { images: MediaAsset[]; name: s
           }
         }}
       >
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.div
-            key={index}
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={reduce ? undefined : { opacity: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Media
-              asset={images[index]}
-              aspect="4 / 5"
-              priority={index === 0}
-              sizes="(min-width: 1024px) 55vw, 100vw"
-            />
-          </motion.div>
-        </AnimatePresence>
+        {/* Stage holds the aspect ratio; every frame is mounted and stacked,
+            and only opacity changes between them — a true cross-fade with no
+            unmount, so the image never dips to the dark stage behind it. */}
+        <div className="relative aspect-[4/5] overflow-hidden bg-ink-raised">
+          {images.map((image, i) => (
+            <div
+              key={image.src}
+              aria-hidden={i !== index}
+              className={cn(
+                'absolute inset-0 transition-opacity ease-luxe',
+                reduce ? 'duration-0' : 'duration-700',
+                i === index ? 'opacity-100' : 'opacity-0'
+              )}
+            >
+              <Media
+                asset={image}
+                className="h-full w-full"
+                priority={i === 0}
+                sizes="(min-width: 1024px) 55vw, 100vw"
+              />
+            </div>
+          ))}
+        </div>
 
         {count > 1 && (
           <>

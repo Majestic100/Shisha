@@ -14,7 +14,7 @@ export function Hero() {
     <section className="relative flex flex-col bg-ink lg:grid lg:min-h-[100svh] lg:grid-cols-2">
       {/* Product photograph — tall on mobile so the whole instrument shows,
           full-height on the right on desktop. */}
-      <div className="relative order-1 aspect-[4/5] w-full overflow-hidden bg-ink-raised sm:aspect-[16/10] lg:order-2 lg:aspect-auto lg:h-full lg:min-h-[100svh]">
+      <div className="relative order-1 aspect-[3/4] w-full overflow-hidden bg-ink-raised sm:aspect-[16/10] lg:order-2 lg:aspect-auto lg:h-full lg:min-h-[100svh]">
         <Image
           src="/images/hero.jpg"
           alt="A Smoke Connoisseur hookah in close detail against an off-black ground"
@@ -23,7 +23,7 @@ export function Hero() {
           placeholder="blur"
           blurDataURL={BLUR}
           sizes="(min-width: 1024px) 50vw, 100vw"
-          className="object-cover object-center"
+          className="object-cover object-[center_38%] lg:object-center"
         />
         {/* Fade the image into the copy band: downward on mobile, leftward on desktop. */}
         <div

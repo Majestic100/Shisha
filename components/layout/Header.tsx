@@ -9,13 +9,25 @@ import { cn } from '@/lib/utils'
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
   const reduce = useReducedMotion()
 
-  // Transparent over the hero, solid once the page is scrolled.
+  // Transparent over the hero, solid once scrolled; and hide on scroll-down,
+  // reveal on scroll-up (kept visible near the very top).
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 64)
+    let lastY = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      setScrolled(y > 64)
+      const goingDown = y > lastY
+      // Ignore tiny jitters; never hide within the first viewport band.
+      if (Math.abs(y - lastY) > 6) {
+        setHidden(goingDown && y > 140)
+        lastY = y
+      }
+    }
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
@@ -44,10 +56,11 @@ export function Header() {
   return (
     <header
       className={cn(
-        'fixed inset-x-0 top-0 z-50 transition-colors duration-700 ease-luxe',
+        'fixed inset-x-0 top-0 z-50 transition-[transform,background-color,border-color] duration-500 ease-luxe',
         scrolled || menuOpen
           ? 'border-b border-hairline bg-surface/90 backdrop-blur-md'
-          : 'border-b border-transparent bg-transparent'
+          : 'border-b border-transparent bg-transparent',
+        hidden && !menuOpen ? '-translate-y-full' : 'translate-y-0'
       )}
     >
       <div className="container-page flex h-20 items-center justify-between md:h-24">
