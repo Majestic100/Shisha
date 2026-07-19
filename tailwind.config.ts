@@ -30,6 +30,15 @@ const config: Config = {
           DEFAULT: '#6B6760',
         },
         hairline: 'rgba(21, 18, 13, 0.14)',
+        // Dark-band tokens (hero, image scrims): always-dark contexts where
+        // light text sits over off-black regardless of the page theme.
+        ink: {
+          DEFAULT: '#0A0A0A',
+          raised: '#121212',
+        },
+        ivory: {
+          DEFAULT: '#F5F1EA',
+        },
       },
       fontFamily: {
         serif: ['var(--font-cormorant)', 'Georgia', 'Cambria', 'Times New Roman', 'serif'],

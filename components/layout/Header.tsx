@@ -37,6 +37,10 @@ export function Header() {
   const isActive = (href: string) =>
     href === '/' ? pathname === '/' : pathname.startsWith(href)
 
+  // The home page opens on a dark hero band; while the header is still
+  // transparent there, its marks must be light to stay legible.
+  const overDarkHero = pathname === '/' && !scrolled && !menuOpen
+
   return (
     <header
       className={cn(
@@ -49,7 +53,10 @@ export function Header() {
       <div className="container-page flex h-20 items-center justify-between md:h-24">
         <Link
           href="/"
-          className="font-serif text-lg font-light tracking-[0.22em] text-foreground md:text-xl"
+          className={cn(
+            'font-serif text-lg font-light tracking-[0.22em] transition-colors duration-500 md:text-xl',
+            overDarkHero ? 'text-ivory' : 'text-foreground'
+          )}
           aria-label={`${site.name} — home`}
         >
           SMOKE CONNOISSEUR
@@ -63,7 +70,11 @@ export function Header() {
               aria-current={isActive(item.href) ? 'page' : undefined}
               className={cn(
                 'link-underline font-sans text-[0.78rem] uppercase tracking-[0.18em] transition-colors duration-300',
-                isActive(item.href) ? 'text-brass' : 'text-foreground/80 hover:text-foreground'
+                isActive(item.href)
+                  ? 'text-brass'
+                  : overDarkHero
+                    ? 'text-ivory/80 hover:text-ivory'
+                    : 'text-foreground/80 hover:text-foreground'
               )}
             >
               {item.label}
@@ -83,13 +94,15 @@ export function Header() {
           <span aria-hidden className="relative block h-3.5 w-6">
             <span
               className={cn(
-                'absolute left-0 h-px w-6 bg-foreground transition-all duration-500 ease-luxe',
+                'absolute left-0 h-px w-6 transition-all duration-500 ease-luxe',
+                overDarkHero ? 'bg-ivory' : 'bg-foreground',
                 menuOpen ? 'top-1/2 rotate-45' : 'top-0'
               )}
             />
             <span
               className={cn(
-                'absolute bottom-0 left-0 h-px w-6 bg-foreground transition-all duration-500 ease-luxe',
+                'absolute bottom-0 left-0 h-px w-6 transition-all duration-500 ease-luxe',
+                overDarkHero ? 'bg-ivory' : 'bg-foreground',
                 menuOpen ? 'bottom-1/2 -rotate-45' : 'bottom-0'
               )}
             />

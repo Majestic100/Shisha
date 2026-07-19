@@ -2,7 +2,7 @@ import Link from 'next/link'
 import type { ComponentPropsWithoutRef, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
-type Variant = 'solid' | 'outline' | 'link'
+type Variant = 'solid' | 'outline' | 'link' | 'heroLink'
 type Size = 'md' | 'lg'
 
 const base =
@@ -17,6 +17,7 @@ const variants: Record<Variant, string> = {
   solid: 'bg-brass text-surface hover:bg-brass-light',
   outline: 'border border-brass/50 text-foreground hover:border-brass hover:bg-brass/5',
   link: 'px-0 py-0 text-brass hover:text-brass-light tracking-[0.2em]',
+  heroLink: 'px-0 py-0 text-brass-light hover:text-ivory tracking-[0.2em]',
 }
 
 type CommonProps = {
